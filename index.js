@@ -13,9 +13,9 @@ const corsOptions = {
   origin: ["http://localhost:3000", "https://humanscape-team5a.netlify.app"],
 };
 
-app.use((_, res) => {
-  res.header("Access-Control-Allow-Origin", "https://humanscape-team5a.netlify.app");
-});
+// app.use((_, res) => {
+//   res.header("Access-Control-Allow-Origin", "https://humanscape-team5a.netlify.app");
+// });
 
 app.use(cors(corsOptions));
 
