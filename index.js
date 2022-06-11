@@ -21,8 +21,8 @@ app.use((_, res) => {
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
-  const textQuery = req.query.searchText;
-  const numOfRowsQuery = req.query.numOfRows;
+  // const textQuery = req.query.searchText;
+  // const numOfRowsQuery = req.query.numOfRows;
 
   axios
     .get(
