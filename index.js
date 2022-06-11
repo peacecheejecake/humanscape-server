@@ -8,20 +8,19 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-
 const corsOptions = {
   origin: ["http://localhost:3000", "https://humanscape-team5a.netlify.app"],
 };
 
-// app.use((_, res) => {
-//   res.header("Access-Control-Allow-Origin", "https://humanscape-team5a.netlify.app");
-// });
+app.use((_, res) => {
+  res.header("Access-Control-Allow-Origin", "https://humanscape-team5a.netlify.app");
+});
 
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
-  const textQuery = req.query.searchText;
-  const numOfRowsQuery = req.query.numOfRows;
+  // const textQuery = req.query.searchText;
+  // const numOfRowsQuery = req.query.numOfRows;
 
   axios
     .get(
@@ -31,9 +30,7 @@ app.get("/", (req, res) => {
           sickType: 1,
           medTp: 2,
           diseaseType: "SICK_NM",
-          searchText: textQuery,
           ServiceKey: 'uVvMtekN5Q4wkwgFzjYoou6YPy56Ox0s0YIRX7gYF0RxwLLX7vdQCRjUrHaDArbnrP9vyy/IdHBVKI2exzPF9w==',
-          numOfRows: numOfRowsQuery,
           _type: "json",
         },
       }
