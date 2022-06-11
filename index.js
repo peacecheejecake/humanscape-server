@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
         params: {
           sickType: 1,
           medTp: 2,
-          searchText: textQuery,
+          // searchText: textQuery,
           ServiceKey: 'uVvMtekN5Q4wkwgFzjYoou6YPy56Ox0s0YIRX7gYF0RxwLLX7vdQCRjUrHaDArbnrP9vyy/IdHBVKI2exzPF9w==',
-          numOfRows: numOfRowsQuery,
+          // numOfRows: numOfRowsQuery,
           _type: "json",
         },
       }
