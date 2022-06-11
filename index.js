@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
           medTp: 2,
           diseaseType: "SICK_NM",
           searchText: textQuery,
-          ServiceKey: process.env.KEY,
+          ServiceKey: 'uVvMtekN5Q4wkwgFzjYoou6YPy56Ox0s0YIRX7gYF0RxwLLX7vdQCRjUrHaDArbnrP9vyy/IdHBVKI2exzPF9w==',
           numOfRows: numOfRowsQuery,
           _type: "json",
         },
