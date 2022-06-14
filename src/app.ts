@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000", "http://localhost:3001");
+  res.header("Access-Control-Allow-Origin", ["http://localhost:3000", "http://localhost:3001"]);
 });
 
 app.get("/", async (req: Request, res: Response, next: NextFunction) => {
