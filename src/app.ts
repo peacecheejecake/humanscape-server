@@ -11,6 +11,7 @@ const app = express();
 app.get("/", async (req: Request, res: Response, next: NextFunction) => {
   // const data = await readFilePromise('./data/dissNameCodeList.json');
   // console.log(data);
+  console.log('request in');
   const r = await axios.get(`http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`);
   console.log(r.data)
   res.send(r.data.response.body);
