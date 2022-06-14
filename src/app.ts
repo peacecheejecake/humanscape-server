@@ -9,22 +9,22 @@ const KEY = config().parsed?.KEY;
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: 'https://humanscape-client.vercel.app',
-//   }),
-// );
+app.use(
+  cors({
+    origin: 'https://humanscape-client.vercel.app',
+  }),
+);
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+// });
 
 app.get("/", async (req: Request, res: Response, next: NextFunction) => {
   // const data = await readFilePromise('./data/dissNameCodeList.json');
   // console.log(data);
   console.log("request in");
   const r = await axios.get(
-    `https://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`,
+    `http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`,
   );
   console.log(r.data);
   res.send(r.data.response.body);
