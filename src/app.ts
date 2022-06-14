@@ -24,7 +24,7 @@ app.get("/", async (req: Request, res: Response, next: NextFunction) => {
   // console.log(data);
   console.log("request in");
   const r = await axios.get(
-    `https://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`,
+    `http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`,
   );
   console.log(r.data);
   res.send(r.data.response.body);
