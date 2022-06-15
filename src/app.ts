@@ -17,8 +17,9 @@ const app = express();
 // app.use(cors());
 
 app.use((req, res, next) => {
-  console.log(req);
+  console.log(req.rawHeaders);
   res.header("Access-Control-Allow-Origin", "*");
+  next();
 });
 
 app.get("/", async (req: Request, res: Response, next: NextFunction) => {
