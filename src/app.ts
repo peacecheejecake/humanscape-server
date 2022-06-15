@@ -19,6 +19,7 @@ const app = express();
 app.use((req, res, next) => {
   console.log(req.headers)
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Content-Security-Policy", "upgrade-insecure-requests");
   next();
 });
 
