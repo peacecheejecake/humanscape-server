@@ -17,7 +17,6 @@ const app = express();
 // app.use(cors());
 
 app.use((req, res, next) => {
-  console.log(req.rawHeaders);
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
@@ -25,6 +24,7 @@ app.use((req, res, next) => {
 app.get("/", async (req: Request, res: Response, next: NextFunction) => {
   // const data = await readFilePromise('./data/dissNameCodeList.json');
   // console.log(data);
+  console.log(req.rawHeaders);
   console.log("request in");
   const r = await axios.get(
     `http://apis.data.go.kr/B551182/diseaseInfoService/getDissNameCodeList?ServiceKey=${KEY}&numOfRows=2000&diseaseType=SICK_NM&medTp=2&_type=json`,
