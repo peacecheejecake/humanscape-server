@@ -9,10 +9,13 @@ const KEY = config().parsed?.KEY;
 
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: 'https://humanscape-client.vercel.app',
+//   }),
+// );
 app.use(
-  cors({
-    origin: 'https://humanscape-client.vercel.app',
-  }),
+  cors(),
 );
 
 // app.use((req, res, next) => {
